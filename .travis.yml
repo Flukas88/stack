@@ -10,5 +10,5 @@ install:
   - sudo apt-get install -y gcc-5
 
 script:
-  - cd stack && make
+  - make
   - ./stack
