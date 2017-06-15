@@ -1,6 +1,6 @@
 #include "list.h"
 #ifndef MAX_EL
-#define MAX_EL 5
+#define MAX_EL 6
 #endif
 
 
@@ -10,7 +10,7 @@ int main() {
     head = push(NULL, first_element);
     printList(head);
     char text[] = "String01";
-    for (uint8_t i = 1; i < MAX_EL; i++) {
+    for (uint8_t i = 1; i < MAX_EL -1 ; i++) {
         text[6] = (char) ((i / 10) + '0');
         text[7] = (char) ((i % 10) + '0');
         push(head, text);
@@ -21,7 +21,7 @@ int main() {
 #endif
     char *n;
     n = calloc(STRING_SIZE, sizeof(char));
-    for (uint8_t i = 1; i < MAX_EL+1; i++) {
+    for (uint8_t i = 1; i < MAX_EL-1; i++) {
         strncpy(n, pop(&head),1);
         printList(head);
     }
