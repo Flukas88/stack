@@ -12,11 +12,17 @@
 
 typedef enum {ERROR=-1, OK=0} status;
 
+/// node - The stack structure
 typedef struct _node {
     struct _node *next;
     char *element;
 } node;
 
+/// push - Push an element
+///
+/// @param head - The head of the stack
+/// @param element - The element to push
+/// @return curr - The current stack
 node *push(node *head, char *element) {
     if (head == NULL) {
         node *first;
@@ -46,6 +52,10 @@ node *push(node *head, char *element) {
     return curr;
 }
 
+/// pop - Pop an element
+///
+/// @param head - The head of the stack
+/// @return ret - The element
 char *pop(node **head) {
     if (*head == NULL) {
         return NULL;
@@ -63,6 +73,8 @@ char *pop(node **head) {
     return ret;
 }
 
+/// printList - Print the stack
+/// @return status - The status
 int printList(node *head) {
     if (head == NULL) {
         return ERROR;
@@ -76,6 +88,9 @@ int printList(node *head) {
     return OK;
 }
 
+/// freeList - Free the list
+///
+/// @param head - The head of the stack
 void freeList(node *head) {
     node *curr = head;
     node *tmp = NULL;

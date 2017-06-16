@@ -10,7 +10,7 @@ int main() {
     head = push(NULL, first_element);
     printList(head);
     char text[] = "String01";
-    for (uint8_t i = 1; i < MAX_EL -1 ; i++) {
+    for (uint8_t i = 1; i < MAX_EL - 1 ; i++) {
         text[6] = (char) ((i / 10) + '0');
         text[7] = (char) ((i % 10) + '0');
         push(head, text);
