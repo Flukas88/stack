@@ -24,7 +24,7 @@ typedef struct _node {
 /// @param element - The element to push
 /// @return curr - The current stack
 node *push(node *head, char *element) {
-    if (head == NULL) {
+    if (isEmpty(head)) {
         node *first;
         first = calloc(1, sizeof(struct _node));
         first->element = calloc(STRING_SIZE, sizeof(char));
@@ -57,7 +57,7 @@ node *push(node *head, char *element) {
 /// @param head - The head of the stack
 /// @return ret - The element
 char *pop(node **head) {
-    if (*head == NULL) {
+    if (isEmpty(head)) {
         return NULL;
     }
     node *curr;
@@ -74,9 +74,10 @@ char *pop(node **head) {
 }
 
 /// printList - Print the stack
+///
 /// @return status - The status
 int printList(node *head) {
-    if (head == NULL) {
+    if (isEmpty(head)) {
         return ERROR;
     }
     node *curr = head;
@@ -103,4 +104,11 @@ void freeList(node *head) {
         free(tmp->element);
         free(tmp);
     }
+}
+
+/// isEmpty - Check if list is empty
+///
+/// @param head - The head of the stack
+int isEmpty(node* head) {
+    return (head == NULL);
 }
