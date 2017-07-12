@@ -18,6 +18,14 @@ typedef struct _node {
     char *element;
 } node;
 
+
+/// isEmpty - Check if list is empty
+///
+/// @param head - The head of the stack
+int isEmpty(node* head) {
+    return (head == NULL);
+}
+
 /// push - Push an element
 ///
 /// @param head - The head of the stack
@@ -106,12 +114,6 @@ void freeList(node *head) {
     }
 }
 
-/// isEmpty - Check if list is empty
-///
-/// @param head - The head of the stack
-int isEmpty(node* head) {
-    return (head == NULL);
-}
 
 
 /// peak - Peak the top of the stack
