@@ -24,6 +24,7 @@ int main() {
     for (uint8_t i = 1; i < MAX_EL-1; i++) {
         strncpy(n, pop(&head),1);
         printList(head);
+        printf("Peak: %s\n", peak(head));
     }
 #ifdef DEBUG
     printf("\nStarts freeing \n\n");

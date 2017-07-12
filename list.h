@@ -112,3 +112,17 @@ void freeList(node *head) {
 int isEmpty(node* head) {
     return (head == NULL);
 }
+
+
+/// peak - Peak the top of the stack
+///
+/// @param head - The head of the stack
+/// @return ret - The element at the head
+char* peak(node* head) {
+    if (isEmpty(head)) {
+        return NULL;
+    }
+    char *ret = calloc(STRING_SIZE, sizeof(char));
+    ret = head->element;
+    return ret;
+}
