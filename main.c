@@ -1,11 +1,11 @@
 #include "list.h"
 
 
-int main() {
-    char exp[] = " 5 1 2 + 4 x + 3 - 2 x";
+int main(int arc, char **argv) {
+    //char exp[] = "50 100 /";
     char *token;
     int op1,op2, cnt = 0;
-    token = strtok(exp, " ");
+    token = strtok(argv[1], " ");
 
     while( token != NULL ) {
         printf("Looking at %s\n", token);
@@ -33,7 +33,7 @@ int main() {
                 op1 = pop();
                 op2 = pop();
                 if ((op1 == 0) || (op2 == 0) ) { printf("Division by 0 is not possible! \n"); }
-                push((char) op1 / op2);
+                push((char) op2 / op1);
             }
 
         }

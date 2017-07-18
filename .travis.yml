@@ -12,4 +12,5 @@ install:
 
 script:
   - cmake CMakeLists.txt && make
-  - ./stack
+  - ./stack "5 5 /"
+  - ./stack "5 1 2 + 4 x + 3 - 2 /"
