@@ -1,13 +1,12 @@
 #pragma once
 
 #include<stdio.h>
-#include<conio.h>
 #include<stdlib.h>
 #include<ctype.h>
 #include <string.h>
 #include <stdbool.h>
 
-#define size 20
+#define size 25
 
 struct stack {
     char s[size];
