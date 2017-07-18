@@ -1,35 +1,46 @@
 #include "list.h"
-#ifndef MAX_EL
-#define MAX_EL 6
-#endif
 
 
 int main() {
-    char first_element[] = "String0";
-    node *head;
-    head = push(NULL, first_element);
-    printList(head);
-    char text[] = "String01";
-    for (uint8_t i = 1; i < MAX_EL - 1 ; i++) {
-        text[6] = (char) ((i / 10) + '0');
-        text[7] = (char) ((i % 10) + '0');
-        push(head, text);
-        printList(head);
+    char exp[] = " 5 1 2 + 4 x + 3 -";
+    char *token;
+    int op1,op2, cnt = 0;
+    token = strtok(exp, " ");
+
+    while( token != NULL )
+    {
+        printf("Looking at %s\n", token);
+        if (is_valid_int(token) == true) {
+            push(atoi(token));
+        }
+        else
+        {
+            if(strstr(token, "+") != NULL) {
+                op1 = pop();
+                op2 = pop();
+                push ((char)op1+op2);
+                printf("Round %d Pushing %d + %d = %d\n", cnt, op1,op2, (op1+op2) );
+
+            } else if (strstr(token, "-") != NULL) {
+                op1 = pop();
+                op2 = pop();
+                push ((char)op2-op1);
+                printf("Round %d Pushing %d - %d = %d\n", cnt, op1,op2, (op2-op1) );
+
+            } else if (strstr(token, "x") != NULL) {
+                op1 = pop();
+                op2 = pop();
+                push ((char)op1*op2);
+                printf("Round %d Pushing %d x %d = %d\n", cnt, op1,op2, (op1*op2) );
+
+            }
+        }
+        cnt++;
+        token = strtok(NULL, " ");
     }
-#ifdef DEBUG
-    printf("\nStarts with pop(ing)\n\n");
-#endif
-    char *n;
-    n = calloc(STRING_SIZE, sizeof(char));
-    for (uint8_t i = 1; i < MAX_EL-1; i++) {
-        strncpy(n, pop(&head),1);
-        printList(head);
-        printf("Peak: %s\n", peak(head));
-    }
-#ifdef DEBUG
-    printf("\nStarts freeing \n\n");
-#endif
-    free(n);
-    freeList(head);
-    return OK;
+
+
+    int res = pop();
+    printf("Res = %d", res);
+    return 0;
 }
