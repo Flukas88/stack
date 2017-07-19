@@ -8,7 +8,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get install -y gcc-5 cmake
+  - sudo apt-get install -y gcc cmake
 
 script:
   - cmake CMakeLists.txt && make
