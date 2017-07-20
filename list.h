@@ -6,7 +6,9 @@
 #include <string.h>
 #include <stdbool.h>
 
+#ifndef size
 #define size 25
+#endif
 
 struct stack {
     double s[size];
