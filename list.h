@@ -9,7 +9,7 @@
 #define size 25
 
 struct stack {
-    char s[size];
+    double s[size];
     int top;
 } st;
 
@@ -20,7 +20,7 @@ int stfull() {
         return 0;
 }
 
-void push(char item) {
+void push(double item) {
     st.top++;
     st.s[st.top] = item;
 }
@@ -32,7 +32,7 @@ int stempty() {
         return 0;
 }
 
-char pop() {
+double pop() {
     char item;
     item = st.s[st.top];
     st.top--;
