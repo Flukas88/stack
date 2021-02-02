@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/lfrancesca/coding/c/stack/list.h
+stdio.h
+-
+stdlib.h
+-
+ctype.h
+-
+string.h
+-
+stdbool.h
+-
+
+/Users/lfrancesca/coding/c/stack/main.c
+list.h
+/Users/lfrancesca/coding/c/stack/list.h
+

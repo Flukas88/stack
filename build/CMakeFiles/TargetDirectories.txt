@@ -1,0 +1,3 @@
+/Users/lfrancesca/coding/c/stack/build/CMakeFiles/rebuild_cache.dir
+/Users/lfrancesca/coding/c/stack/build/CMakeFiles/edit_cache.dir
+/Users/lfrancesca/coding/c/stack/build/CMakeFiles/stack.dir

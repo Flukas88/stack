@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/lfrancesca/coding/c/stack/build",
+  "command": "/usr/bin/clang   -std=c99 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -std=gnu99 -o CMakeFiles/stack.dir/main.c.o -c /Users/lfrancesca/coding/c/stack/main.c",
+  "file": "/Users/lfrancesca/coding/c/stack/main.c"
+}
+]

@@ -15,11 +15,11 @@ struct stack {
     int top;
 } st;
 
-int stfull() {
+bool stfull() {
     if (st.top >= size - 1)
-        return 1;
+        return true;
     else
-        return 0;
+        return false;
 }
 
 void push(double item) {
@@ -27,11 +27,11 @@ void push(double item) {
     st.s[st.top] = item;
 }
 
-int stempty() {
+bool stempty() {
     if (st.top == -1)
-        return 1;
+        return true;
     else
-        return 0;
+        return false;
 }
 
 double pop() {
@@ -47,7 +47,7 @@ void display() {
         printf("\nStack Is Empty!");
     else {
         for (i = st.top; i >= 0; i--)
-            printf("\n%d", st.s[i]);
+            printf("\n%f", st.s[i]);
     }
 }
 
