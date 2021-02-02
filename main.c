@@ -1,8 +1,14 @@
 #include "list.h"
 
 
-int main(int arc, char **argv) {
-    char *token;
+int main(int argc, char **argv) {
+
+    if (argc < 2) {
+        printf("Please provide operations to parse\n");
+		exit(0);
+	}
+
+	char *token;
     double op1,op2;
     token = strtok(argv[1], " ");
 
@@ -28,7 +34,12 @@ int main(int arc, char **argv) {
                 op2 = pop();
                 push(op1 * op2);
                 printf("Pushing %f x %f = %f\n", op1, op2, (op1 * op2));
-            } else if (strstr(token, "/") != NULL) {
+            } else if (strstr(token, "*") != NULL) {
+                op1 = pop();
+                op2 = pop();
+                push(op1 * op2);
+                printf("Pushing %f * %f = %f\n", op1, op2, (op1 * op2));
+            }  else if (strstr(token, "/") != NULL) {
                 op1 = pop();
                 op2 = pop();
                 printf("Pushing %f / %f = %f\n", op1, op2, (op2 / op1));
