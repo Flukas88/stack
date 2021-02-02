@@ -47,3 +47,4 @@
 .idea/
 cmake-build-debug/
 build/
+.vscode/
