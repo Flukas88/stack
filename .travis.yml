@@ -10,6 +10,6 @@ install:
   - sudo apt-get install -y cmake
 
 script:
-  - cmake CMakeListsTravis.txt && make
+  - cmake ./travis/CMakeLists.txt && make
   - ./stack "5 5 /"
   - ./stack "5 1 2 + 4 x + 3 - 2 /"
