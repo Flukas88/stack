@@ -5,6 +5,8 @@ project(stack
   LANGUAGES C
   )
 
+set(CMAKE_C_STANDARD 99)
+
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 file(GLOB all_SRCS
