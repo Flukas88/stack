@@ -1,9 +1,15 @@
-cmake_minimum_required(VERSION 2.9)
-project(stack)
+cmake_minimum_required(VERSION 3.12)
+project(stack
+  DESCRIPTION "A Reverse Polish notation calculator in C"
+  VERSION "0.1"
+  LANGUAGES C
+  )
 
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_C_FLAGS "-std=c99")
-add_compile_definitions(DEBUG)
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-set(SOURCE_FILES main.c list.h)
-add_executable(stack ${SOURCE_FILES})
+file(GLOB all_SRCS
+        "${PROJECT_SOURCE_DIR}/include/*.h"
+        "${PROJECT_SOURCE_DIR}/*.cpp"
+        )
+
+add_executable(cppstack ${all_SRCS} main.c)
