@@ -14,4 +14,4 @@ file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/*.cpp"
         )
 
-add_executable(cppstack ${all_SRCS} main.c)
+add_executable(cstack ${all_SRCS} main.c)
