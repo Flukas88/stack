@@ -11,7 +11,6 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/include/*.h"
-        "${PROJECT_SOURCE_DIR}/*.cpp"
         )
 
 add_executable(cstack ${all_SRCS} main.c)
